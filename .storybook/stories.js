@@ -55,4 +55,7 @@ export default [
 
   // SnackBar
   'SnackBar',
+
+  // Theme Switcher
+  'ThemeSwitcher',
 ].map(s => `./${s}/${s}.story.jsx`);
