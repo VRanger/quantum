@@ -7,16 +7,20 @@ const queryStyle = ({ theme: { breakpoints } }) =>
   Object.entries(breakpoints).map(
     ([name, { columns }]) =>
       query(breakpoints)[name]`
+      -ms-grid-columns: 1fr var(--gutter) 1fr var(--gutter) 1fr var(--gutter) 1fr var(--gutter) 1fr var(--gutter) 1fr var(--gutter) 1fr var(--gutter) 1fr var(--gutter) 1fr var(--gutter) 1fr var(--gutter) 1fr var(--gutter) 1fr; 
       grid-template-columns: repeat(${columns}, 1fr);
     `,
   );
 
 const Row = styled.div`
+  display: -ms-grid;
   display: grid;
   grid-column-gap: var(--gutter);
   grid-row-gap: var(--gutter);
   margin-bottom: var(--gutter);
+  grid-auto-columns: -webkit-max-content;
   grid-auto-columns: max-content;
+
   ${queryStyle}
 
   ${hide}
